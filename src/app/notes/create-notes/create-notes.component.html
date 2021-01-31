@@ -1,0 +1,47 @@
+<div class="container" *ngIf="!checkStorage">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title">Create Note</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form name="noteForm">
+        <mat-grid-list cols="1" rowHeight="20:1">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Name"
+                [(ngModel)]="note.name"
+                name="name"
+                required
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <textarea
+                matInput
+                placeholder="Description"
+                [(ngModel)]="note.description"
+                name="description"
+                required
+              ></textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="actionButtons">
+        <button mat-raised-button (click)="submit()" color="primary">
+          Create Note
+        </button>
+        <button mat-raised-button (click)="cancel()" color="primary">
+          Cancel
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

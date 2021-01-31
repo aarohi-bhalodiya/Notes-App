@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,NgForm,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,21 +12,24 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { NotesModule } from './notes/notes.module';
-import { MatIconModule } from '@angular/material/icon';
+import { NotesRoutingModule } from './notes-routing.module';
+import { CreateNotesComponent } from './create-notes/create-notes.component';
+import { UpdateNotesComponent } from './update-notes/update-notes.component';
+import { NotesComponent } from './notes.component';
+import {MatIconModule} from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent
+    NotesComponent,
+    CreateNotesComponent,
+    UpdateNotesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    NotesRoutingModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -38,10 +41,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatGridListModule,
     MatTableModule,
-    NotesModule,
-    MatIconModule
+    MatIconModule,
+    MatSortModule 
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class NotesModule { }
